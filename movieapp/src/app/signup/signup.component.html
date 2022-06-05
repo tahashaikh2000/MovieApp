@@ -1,0 +1,111 @@
+<!-- <form>
+    <br>
+    <div>
+        <label for="uname">Choose a Firstname: </label>
+        <input type="text" id="uname" name="name">
+    </div>
+    <br>
+    <div>
+        <label for="uname">Choose a Lastname: </label>
+        <input type="text" id="lastname" name="lastname">
+      </div>
+
+    <br>
+    <div class="emailBox">
+      <label for="emailAddress">Your e-mail address</label><br>
+      <input id="emailAddress" type="email" size="64" maxLength="64" required
+             placeholder="username@gmail.com" pattern=".+@gmail\.com"
+             title="Please provide only a valid e-mail address">
+    </div>
+    <br>
+    <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone number</mat-label>
+           <example-tel-input formControlName="tel" required></example-tel-input> -->
+          <!-- <mat-icon matSuffix>phone</mat-icon>
+          <mat-hint>Include area code</mat-hint>
+        </mat-form-field>
+      </div>
+     <br>
+
+    <div class="password">
+    <label for="userPassword">Password:</label>
+    <input id="userPassword" type="password" autocomplete="current-password">
+     </div>
+ </form> --> 
+
+
+ <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center"> 
+                   <h1>Register</h1>
+                   <h6>Register Yourself</h6>
+                </div>
+                <form  >
+                    <form   [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                        <br>
+                     <div class="mb-3">
+                        <label for="uname">Enter a Firstname: </label>
+                        <input formControlName="firstName" type="text" id="uname" name="name">
+                    </div>
+                    <br>
+                <div class="mb-3">
+                    <label for="uname">Enter a Lastname: </label>
+                    <input formControlName="lastName" type="text" id="lastname" name="lastname">
+                </div>
+
+                <br>
+                <div class="mb-3 emailBox">
+                 <label for="emailAddress"> Enter Your e-mail address</label><br>
+                <input formControlName="emailId" id="emailAddress" type="email" size="64" maxLength="64" required
+                placeholder="username@gmail.com" pattern=".+@gmail\.com"
+                title="Please provide only a valid e-mail address">
+                </div>
+                <br>
+
+                <div class="password">
+                    <label for="userPassword">Enter Your Password:</label>
+                    <input formControlName="password" id="userPassword" type="password" autocomplete="current-password">
+                     </div>
+                     <br>
+                    
+                        <div class="mb-3">
+                          <label for="phoneNumber">Enter Your phoneNumber: </label>
+                          <input formControlName="phoneNo" type="number" id="phoneNumber" name="phoneNumber">
+                      </div>
+                     
+
+                          
+                          <div class="d-flex flex-row align-items-center mb-4">
+                          
+                            <i style="margin-left:5px;" class="n"></i>
+                             <img style="size: 8px;" src="https://img.icons8.com/material/24/000000/upload--v1.png"/>
+                            <div class="form-outline flex-fill mb-0">
+                            <label style="font-size:11px;margin-left: 5px;" for="exampleFormControlInput1" class="form-label" id="form3Example1c">User Image </label>
+                            
+                            <input style="margin-left:20px;margin-top:10px;" type="file" placeholder="user image" class="form__icon" id="form3Example1c"  formControlName="userImage" (change)="onUploadImage($event)">
+                          </div>
+                    
+                        </div>
+                        
+                          
+                          <img style="border-radius: 3px;" src="{{uploadImage}}" width="40%"> 
+                          <br><br>
+                          
+
+
+
+                          <!-- <button (click)="add()">Add Profile</button> -->
+                         
+                        <button type="submit" class="btn btn-primary">Register</button>
+                      </form>
+                      <a routerLink="/login">Already registered Click to Login</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,46 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Movies</h1>
+  <mat-nav-list>
+    <a mat-list-item routerLink="/favourite">Favourites</a>
+    <!-- <a mat-list-item routerLink="/login">Log In</a> -->
+    <!-- <a mat-list-item routerLink="/profile">Profile</a> -->
+  </mat-nav-list>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let movie of favList " [colspan]="1" [rowspan]="1">
+
+
+      <mat-card class="dashboard-card"> 
+        <mat-card-header>
+          <mat-card-title> 
+            <h1>{{movie.title}}</h1>
+            <!-- <div class="col-4"> -->
+              <img mat-card-image src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="{{movie.poster_path}}">
+            <!-- </div> -->
+            <!-- https://image.tmdb.org/t/p/original/["poster_path" (OR) "backdrop_path"] -->
+            <div class="col-8">
+              <h2 class="uk-text-muted">Popularity: {{movie.popularity}}</h2>
+              <h2 class="uk-text-muted">Released Date: {{movie.release_date | date: 'medium' }}</h2>
+            </div>
+           
+            <!-- {{card.id}}
+            {{card.original_language}}
+            {{card.popularity}} -->
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <!-- <button (click)="addFav()" mat-icon-button color="warn">
+                <mat-icon>favorite</mat-icon>
+              </button> -->
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+
+
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,102 @@
+<ng-container>
+  <app-slider></app-slider>                                   
+</ng-container> 
+
+ <div class="listing">
+  <div class="listing__head">
+      <h3 class="listing__title">Trending Movies</h3>
+      <a [routerLink]="['/movie']" routerLinkActive="router-link-active" class="listing__explore">
+          <strong>Explore All</strong>
+      </a>
+  </div>
+  
+  <app-skeleton *ngIf="loader" ></app-skeleton>
+  <p-carousel [value]="nowPlaying" [numVisible]="6" [numScroll]="4" [circular]="false" *ngIf="!loader"
+      [responsiveOptions]="responsiveOptions">
+      <ng-template let-movie pTemplate="item">
+          <div class="listing-item-style" [routerLink]="['/movie/', movie.id]">
+              <div class="overlay">
+                  <div class="hover"><i class="material-icons">play_arrow</i> PLAY NOW</div>
+              </div>
+              <img *ngIf="movie?.poster_path"
+                  src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{movie?.poster_path}}">
+              <img *ngIf="!movie?.poster_path" src="assets/images/default-movie.png">
+              <h6>{{ movie?.title }}</h6>
+              <p class="rate"><i class="material-icons">star</i><span>{{movie?.vote_average}}</span> /10</p>
+              <p class="year"><span>{{movie?.release_date | date: 'yyyy'}}</span>
+              </p>
+          </div>
+      </ng-template>
+  </p-carousel>
+</div>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/signup">Sign Up</a>
+      <a mat-list-item routerLink="/login">Log In</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>MovieApp</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+   </mat-sidenav-content>
+</mat-sidenav-container>  -->
+
+
+

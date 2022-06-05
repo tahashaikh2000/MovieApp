@@ -1,0 +1,58 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                   <h1>Login</h1>
+                   <h6>Please Enter LogIn Details</h6>
+                </div>
+                <form  >
+                    <form [formGroup]="LoginForm" (ngSubmit)="onLogin()">
+                      
+                    
+                <div class="mb-3 emailBox">
+                 <label for="emailAddress"> Enter Your e-mail address</label><br>
+                <input formControlName="emailId" id="emailAddress" type="email" size="64" maxLength="64" required
+                placeholder="username@gmail.com" pattern=".+@gmail\.com"
+                title="Please provide only a valid e-mail address">
+                </div>
+                <br>
+
+                <div class="password">
+                    <label for="userPassword">Enter Your Password:</label>
+                    <input formControlName="password" id="userPassword" type="password" autocomplete="current-password">
+                     </div>
+                     <br>
+                    
+                         
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+                      <a routerLink="/signup">New User?Click to Register Page</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+      <form class="example-form">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password">
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+        
+      </form>
+    </mat-card>
+  </div> -->
